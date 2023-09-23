@@ -40,6 +40,9 @@ const Board = () => {
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   const handleClick = (i: number) => {
+    if (squares[i]) {
+      return;
+    }
     const nextSquares = squares.slice();
     if (xIsNext) {
       nextSquares[i] = Xicon;
