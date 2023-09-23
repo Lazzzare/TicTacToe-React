@@ -1,5 +1,3 @@
-// import { useState } from "react";
-
 interface SquareProps {
   value: boolean | string;
   onSquareClick: () => void;
