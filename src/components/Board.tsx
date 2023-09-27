@@ -3,6 +3,7 @@ import Square from "./Square";
 // import Xicon from "../assets/icon-x.svg";
 // import Oicon from "../assets/icon-o.svg";
 import BoardHeader from "./BoardHeader";
+import WinnerBox from "./WinnerBox";
 
 const Board = () => {
   const [xIsNext, setXIsNext] = useState(true);
@@ -63,6 +64,8 @@ const Board = () => {
     status = (xIsNext ? "X" : "O") + " TURN";
   }
 
+  console.log("Winner", winner);
+
   return (
     <>
       {/* BoardHeader */}
@@ -85,6 +88,7 @@ const Board = () => {
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
       </div>
+      <WinnerBox winner={winner} />
     </>
   );
 };
