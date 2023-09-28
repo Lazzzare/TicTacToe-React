@@ -22,7 +22,7 @@ const BoardHeader = ({ status, winner, setRefresh }: Props) => {
       );
   }
   return (
-    <div className="flex flex-row justify-between w-[460px] mb-5">
+    <div className="flex flex-row justify-between w-[328px] md:w-[460px] mb-5">
       <img src={HomeLogo} alt="HomeLogo" className="w-[70px]" />
       <div className="flex flex-row gap-x-3 bg-SemiDarkNavy pt-3 pb-4 px-7 rounded-xl shadow items-center">
         {icon}
@@ -30,7 +30,12 @@ const BoardHeader = ({ status, winner, setRefresh }: Props) => {
           {!winner ? status : "Winner"}
         </h3>
       </div>
-      <img src={Restart} alt="Restart" onClick={() => setRefresh(true)} />
+      <img
+        src={Restart}
+        className="cursor-pointer"
+        alt="Restart"
+        onClick={() => setRefresh(true)}
+      />
     </div>
   );
 };
