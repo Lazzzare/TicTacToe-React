@@ -18,3 +18,7 @@ body {
 .shadowBlue {
   box-shadow: 0px -8px 0px 0px #118c87 inset;
 }
+
+.shadowSilver {
+  box-shadow: 0px -4px 0px 0px #6b8997 inset;
+}
