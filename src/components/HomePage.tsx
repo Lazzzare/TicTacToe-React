@@ -50,7 +50,10 @@ const HomePage = () => {
         </p>
       </div>
       <div className="mt-10 flex flex-col gap-y-5">
-        <button className="shadowYellow justify-center flex text-xl font-bold tracking-[1.25px] bg-LightYellow text-DarkNavy pt-4 pb-6 rounded-2xl border-[0px]">
+        <button
+          onClick={() => alert("In Progress... (Coming Soon)")}
+          className="shadowYellow justify-center flex text-xl font-bold tracking-[1.25px] bg-LightYellow text-DarkNavy pt-4 pb-6 rounded-2xl border-[0px]"
+        >
           NEW GAME (VS CPU)
         </button>
         <Link to={"/board"}>
