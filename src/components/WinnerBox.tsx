@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 interface Props {
   winner: string | null;
+  onNewRound: () => void;
 }
 
-const WinnerBox = ({ winner }: Props) => {
+const WinnerBox = ({ winner, onNewRound }: Props) => {
   let icon = null;
   if (winner) {
     icon =
@@ -16,6 +17,9 @@ const WinnerBox = ({ winner }: Props) => {
         <img src={Oicon} alt="Oicon" className="w-16 h-16" />
       );
   }
+  const handleNextRound = () => {
+    onNewRound();
+  };
   return (
     <div className="absolute flex flex-col justify-center items-center mx-auto w-full py-11 bg-SemiDarkNavy">
       <div className="flex flex-col space-y-6">
@@ -35,7 +39,10 @@ const WinnerBox = ({ winner }: Props) => {
             Quit
           </button>
         </Link>
-        <button className="shadowYellow bg-LightYellow rounded-xl font-bold tracking-[1px] text-DarkNavy py-[15px] px-[17px]">
+        <button
+          onClick={handleNextRound}
+          className="shadowYellow bg-LightYellow rounded-xl font-bold tracking-[1px] text-DarkNavy py-[15px] px-[17px]"
+        >
           NEXT ROUND
         </button>
       </div>
