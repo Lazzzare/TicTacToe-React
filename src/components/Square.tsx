@@ -11,10 +11,11 @@ const Square = ({ value, onSquareClick }: Props) => {
   let icon = null;
 
   if (value === "X") {
-    icon = <img src={Xicon} alt="Xicon" className="w-10 h-10" />;
+    icon = <img src={Xicon} alt="Xicon" className="w-16 h-16" />;
   } else if (value === "O") {
-    icon = <img src={Oicon} alt="Oicon" className="w-10 h-10" />;
+    icon = <img src={Oicon} alt="Oicon" className="w-16 h-16" />;
   }
+
   return (
     <button
       onClick={onSquareClick}
