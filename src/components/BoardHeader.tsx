@@ -8,9 +8,10 @@ type WinnerType = "X" | "O" | null;
 interface Props {
   status: string;
   winner: WinnerType | string;
+  setRefresh: (e: boolean) => void;
 }
 
-const BoardHeader = ({ status, winner }: Props) => {
+const BoardHeader = ({ status, winner, setRefresh }: Props) => {
   let icon = null;
   if (winner) {
     icon =
@@ -27,10 +28,9 @@ const BoardHeader = ({ status, winner }: Props) => {
         {icon}
         <h3 className="uppercase font-bold tracking-[1px] text-Silver">
           {!winner ? status : "Winner"}
-          {/* {status} */}
         </h3>
       </div>
-      <img src={Restart} alt="Restart" />
+      <img src={Restart} alt="Restart" onClick={() => setRefresh(true)} />
     </div>
   );
 };
