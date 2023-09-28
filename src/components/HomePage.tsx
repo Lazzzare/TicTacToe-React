@@ -10,7 +10,7 @@ const HomePage = () => {
   const [pickMark, setPickMark] = useState("O");
 
   return (
-    <div>
+    <div className="w-[327px] md:w-[460px]">
       <img src={HomeLogo} alt="HomeLogo" className="mx-auto mb-10" />
       <div className="pt-6 pb-7 px-6 bg-SemiDarkNavy rounded-2xl items-center text-center justify-center flex flex-col shadow">
         <h2 className="mb-6 text-Silver tracking-[1px] font-bold">
@@ -23,7 +23,7 @@ const HomePage = () => {
             onClick={() => setPickMark("X")}
             className={`${
               pickMark === "X" ? "bg-Silver" : "bg-transparent"
-            } px-8 w-[198px] h-[54px] flex justify-center items-center rounded-md cursor-pointer`}
+            } px-8 w-[131px] md:w-[198px] h-[54px] flex justify-center items-center rounded-md cursor-pointer`}
           >
             {pickMark === "X" ? (
               <img src={IconXblack} alt="IconXblack" className="w-8 h-8" />
@@ -36,7 +36,7 @@ const HomePage = () => {
             onClick={() => setPickMark("O")}
             className={`${
               pickMark === "O" ? "bg-Silver" : "bg-transparent"
-            } px-8 w-[198px] h-[54px] flex justify-center items-center rounded-md cursor-pointer`}
+            } px-8 w-[131px] md:w-[198px] h-[54px] flex justify-center items-center rounded-md cursor-pointer`}
           >
             {pickMark === "O" ? (
               <img src={IconOblack} alt="IconXblack" className="w-8 h-8" />
