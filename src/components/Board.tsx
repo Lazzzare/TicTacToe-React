@@ -4,15 +4,13 @@ import Square from "./Square";
 // import Oicon from "../assets/icon-o.svg";
 import BoardHeader from "./BoardHeader";
 import WinnerBox from "./WinnerBox";
+import BoardFooter from "./BoardFooter";
 
 const Board = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(""));
 
   console.log(squares);
-
-  // const X = <img src={Xicon} alt="Xicon" />;
-  // const O = <img src={Oicon} alt="Oicon" />;
 
   const calculateWinner = (squares: string[]) => {
     const lines = [
@@ -33,7 +31,7 @@ const Board = () => {
         squares[a] === squares[b] &&
         squares[a] === squares[c]
       ) {
-        return squares[a]; // Return the winning symbol (X or O)
+        return squares[a];
       }
     }
 
@@ -87,8 +85,9 @@ const Board = () => {
           <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
           <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
         </div>
+        <BoardFooter />
       </div>
-      <WinnerBox winner={winner} />
+      {winner ? <WinnerBox winner={winner} /> : null}
     </>
   );
 };
