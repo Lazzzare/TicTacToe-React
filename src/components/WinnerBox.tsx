@@ -12,9 +12,9 @@ const WinnerBox = ({ winner, onNewRound }: Props) => {
   if (winner) {
     icon =
       winner === "X" ? (
-        <img src={Xicon} alt="Xicon" className="w-16 h-16" />
+        <img src={Xicon} alt="Xicon" className="w-7 md:w-16 h-7 md:h-16" />
       ) : (
-        <img src={Oicon} alt="Oicon" className="w-16 h-16" />
+        <img src={Oicon} alt="Oicon" className="w-7 md:w-16 h-7 md:h-16" />
       );
   }
   const handleNextRound = () => {
@@ -22,13 +22,13 @@ const WinnerBox = ({ winner, onNewRound }: Props) => {
   };
   return (
     <div className="absolute flex flex-col justify-center items-center mx-auto w-full py-11 bg-SemiDarkNavy">
-      <div className="flex flex-col space-y-6">
+      <div className="flex flex-col space-y-6 items-center text-center">
         <h2 className="text-Silver font-bold tracking-[1px] text-center">
           PLAYER 1 WINS!
         </h2>
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-row gap-3 md:gap-6 items-center">
           {icon}
-          <h1 className="text-LightYellow font-bold text-[40px] tracking-[2.5px]">
+          <h1 className="text-LightYellow font-bold text-2xl md:text-[40px] tracking-[2.5px]">
             TAKES THE ROUND
           </h1>
         </div>
