@@ -13,7 +13,7 @@ const Board = () => {
   const [squares, setSquares] = useState<string[]>(Array(9).fill(""));
   const [refresh, setRefresh] = useState<boolean>(false);
   const [winCountX, setWinCountX] = useState<number>(0);
-  const [winners, setWinner] = useState<string | null>(null);
+  const [, setWinner] = useState<string | null>(null);
   const [tiesCount, setTiesCount] = useState<number>(0);
   const [winCountY, setWinCountY] = useState<number>(0);
   const [isTie, setIsTie] = useState<boolean>(false);
@@ -85,7 +85,11 @@ const Board = () => {
 
   return (
     <>
-      <div className={`${winner || refresh ? "opacity-30" : "opacity-100"}`}>
+      <div
+        className={`${
+          winner || refresh ? "opacity-30" : "opacity-100"
+        } w-[328px] md:w-[457px]`}
+      >
         {/* BoardHeader */}
         <BoardHeader
           status={`${status}`}
