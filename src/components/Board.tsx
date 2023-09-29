@@ -1,7 +1,5 @@
 import { useState } from "react";
 import Square from "./Square";
-// import Xicon from "../assets/icon-x.svg";
-// import Oicon from "../assets/icon-o.svg";
 import BoardHeader from "./BoardHeader";
 import WinnerBox from "./WinnerBox";
 import BoardFooter from "./BoardFooter";
@@ -13,7 +11,6 @@ const Board = () => {
   const [squares, setSquares] = useState<string[]>(Array(9).fill(""));
   const [refresh, setRefresh] = useState<boolean>(false);
   const [winCountX, setWinCountX] = useState<number>(0);
-  // const [, setWinner] = useState<string | null>(null);
   const [tiesCount, setTiesCount] = useState<number>(0);
   const [winCountY, setWinCountY] = useState<number>(0);
   const [isTie, setIsTie] = useState<boolean>(false);
