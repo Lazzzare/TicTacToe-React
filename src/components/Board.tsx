@@ -13,10 +13,11 @@ const Board = () => {
   const [squares, setSquares] = useState<string[]>(Array(9).fill(""));
   const [refresh, setRefresh] = useState<boolean>(false);
   const [winCountX, setWinCountX] = useState<number>(0);
-  const [, setWinner] = useState<string | null>(null);
+  // const [, setWinner] = useState<string | null>(null);
   const [tiesCount, setTiesCount] = useState<number>(0);
   const [winCountY, setWinCountY] = useState<number>(0);
   const [isTie, setIsTie] = useState<boolean>(false);
+  const [resetClicked, setResetClicked] = useState<boolean>(false);
 
   const calculateWinner = (squares: string[]) => {
     const lines = [
@@ -80,7 +81,9 @@ const Board = () => {
   const handleNewRound = () => {
     setSquares(Array(9).fill(""));
     setXIsNext(true);
-    setWinner(null);
+    // setRefresh(!refresh);
+
+    setResetClicked((prev) => !prev);
   };
 
   return (
@@ -99,19 +102,64 @@ const Board = () => {
         {/* Board */}
         <div className="flex flex-col">
           <div className="flex gap-x-5 mb-5">
-            <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
-            <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
-            <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
+            <Square
+              value={squares[0]}
+              onSquareClick={() => handleClick(0)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
+            <Square
+              value={squares[1]}
+              onSquareClick={() => handleClick(1)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
+            <Square
+              value={squares[2]}
+              onSquareClick={() => handleClick(2)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
           </div>
           <div className="flex gap-x-5 mb-5">
-            <Square value={squares[3]} onSquareClick={() => handleClick(3)} />
-            <Square value={squares[4]} onSquareClick={() => handleClick(4)} />
-            <Square value={squares[5]} onSquareClick={() => handleClick(5)} />
+            <Square
+              value={squares[3]}
+              onSquareClick={() => handleClick(3)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
+            <Square
+              value={squares[4]}
+              onSquareClick={() => handleClick(4)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
+            <Square
+              value={squares[5]}
+              onSquareClick={() => handleClick(5)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
           </div>
           <div className="flex gap-x-5">
-            <Square value={squares[6]} onSquareClick={() => handleClick(6)} />
-            <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
-            <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
+            <Square
+              value={squares[6]}
+              onSquareClick={() => handleClick(6)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
+            <Square
+              value={squares[7]}
+              onSquareClick={() => handleClick(7)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
+            <Square
+              value={squares[8]}
+              onSquareClick={() => handleClick(8)}
+              xIsNext={xIsNext}
+              resetClicked={resetClicked}
+            />
           </div>
         </div>
         <BoardFooter
