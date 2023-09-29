@@ -1,6 +1,6 @@
 # Tic-Tac-Toe
 
-  <img src="/src/assets/Background.png" alt="First Image">
+  <img src="./src/assets/Background.jpg" alt="First Image">
 
 # Getting Started
 
