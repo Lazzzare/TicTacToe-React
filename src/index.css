@@ -22,3 +22,15 @@ body {
 .shadowSilver {
   box-shadow: 0px -4px 0px 0px #6b8997 inset;
 }
+
+.hover-x:hover::before {
+  content: url("./assets/icon-x-outline.svg");
+}
+
+.hover-o:hover::before {
+  content: url("./assets/icon-o-outline.svg");
+}
+
+.clicked-square:hover::before {
+  content: none; /* Disable hover effect for clicked squares */
+}
