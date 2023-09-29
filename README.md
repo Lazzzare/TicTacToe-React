@@ -9,7 +9,7 @@
 1. First of all you need to clone app repository from github:
 
 ```
-https://github.com/Lazzzare/PasswordGeneratorApp-React
+https://github.com/Lazzzare/TicTacToe-React
 ```
 
 2. Next step requires install all the dependencies.
